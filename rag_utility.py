@@ -48,6 +48,7 @@ def answer_query(user_question):
     qa_chain = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
 
     # Get the answer to the user's question
-    answer = qa_chain.run(user_question)
+    # answer = qa_chain.run(user_question)
+    answer = qa_chain.invoke(user_question)
 
     return answer
